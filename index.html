@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <main class="conteudo">
+        <header class="header">
+            <nav class="menu">
+                <a href="#" data-section="sobre">QUEM SOU</a>
+                <a href="#" data-section="portfolio">PORTFÓLIO</a>
+            </nav>
+        </header>
+        <section class="hero">
+            <h1 id="titulo" class="titulo">Luís R. Silva</h1>
+            <p id="subtitulo" class="cargo">Designer Gráfico e Web</p>
+        </section>
+
+        <section class="secao painel ativa" id="sobre">
+             <h2 class="titulo-secao">Sobre mim</h2>
+            <p class="descricao">
+                    Profissional da área gráfica com mais de 20 anos de experiência em design e produção visual.
+                    Atuo no desenvolvimento de identidades visuais, embalagens e materiais gráficos, além de projetos para web como landing pages e sites institucionais.
+                    Tenho formação em desenvolvimento mobile e experiência na criação de soluções digitais com foco em comunicação clara e design funciona
+                </p>
+                <div class="divisor"></div>
+            <div class="painel-conteudo">
+                <form class="formulario">
+                    <input type="email" placeholder="Email">
+                    <textarea rows="4" placeholder="Mensagem"></textarea>
+                    <button class="botao-enviar">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="secao painel" id="portfolio">
+            <div class="painel-conteudo painel-portfolio">
+
+                <div class="grid">
+                    <div class="card logo">01</div>
+                    <div class="card site_1">02</div>
+                    <div class="card site_2">03</div>
+                    <div class="card alto embalagem">04</div>
+                    <div class="card site_3">05</div>
+                    <div class="card alto landing">06</div>
+                    <div class="card sete agenda">07</div>
+                    <div class="card oito site_4">08</div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>Todos Direitos reservados &copy; 2026 </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

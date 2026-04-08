@@ -1,0 +1,290 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    font-family: 'Figtree', sans-serif;
+    min-height: 80vh;
+    color: #4478ff;
+    overflow-x: hidden;
+}
+
+/* FUNDO FIXO */
+.bg {
+    position: fixed;
+    inset: 0;
+    background-image: url(imagens/Hero_luis_R.webp);
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+/* CAMADA ESCURA */
+.conteudo {
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* HEADER FLUTUANTE */
+.header {
+    padding-top: 70px;
+    top: 40px;
+    width: 100%;
+    z-index: 10;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #4478ff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    opacity: 1;
+}
+
+/* HERO (NOME + CARGO) */
+.hero {
+    min-height: 80vh;
+    padding-top: 80px; /* espaço visual do menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    margin-bottom: 10px;
+}
+
+.cargo {
+    font-size: 2rem;
+    opacity: 0.85;
+    font-family: 'Newsreader', Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+/* SEÇÕES */
+.secao {
+    display: none;
+}
+
+.titulo-secao{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.secao.ativa {
+    display: block;
+}
+
+#sobre{
+    background-color: white;
+}
+
+/* PAINEL BRANCO (DESCRIÇÃO + FORM) */
+.painel {
+
+    color: #4478ff;
+    padding: 20px 20px;
+}
+
+#portfolio{
+padding-bottom: 0;
+}
+
+.painel-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.descricao{
+    color: #4478ff;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+}
+
+.divisor{
+    width: 80px;
+    height: 2px;
+    background: #4478ff;
+    margin: 30px auto;
+}
+
+/* FORMULÁRIO */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: #4478ff;
+}
+
+.formulario button {
+    width: fit-content;
+    padding: 10px 24px;
+    background-color: #4478ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #3f50ff;
+}
+/* GRID PORTFÓLIO */
+.painel-portfolio {
+    max-width: 1500px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 260px;
+}
+
+/* CARD BASE */
+.card {
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.oito {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+}
+
+
+/* HOVER */
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #4478ff;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card:hover {
+    color: white;
+}
+
+
+.logo{
+    background-image: url(imagens/Galeria/page.jpg);
+}
+
+.site_2{
+    background-image: url(imagens/Galeria/site1.gif);
+}
+
+.site_1{
+    background-image: url(imagens/Galeria/logo.jpg);
+}
+
+.site_3{
+    background-image: url(imagens/Galeria/site2.jpg)
+}
+
+.site_4{
+    background-image: url(imagens/Galeria/site4.jpg);
+}
+
+.landing{
+    background-image: url(imagens/Galeria/site5.jpg);
+}
+
+.embalagem{
+    background-image: url(imagens/Galeria/site6.jpg);
+}
+
+.agenda{
+    background-image: url(imagens/Galeria/noute.gif);
+}
+
+
+
+
+footer {
+    color: white;
+        padding: 20px 20px;
+    text-align: center;
+    font-size: 13px;
+
+    background: #4478ff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
