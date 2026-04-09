@@ -17,9 +17,9 @@ body {
 .bg {
     position: fixed;
     inset: 0;
-    background-image: url(imagens/Hero_luis_R.webp);
+    background-image: url(imagens/Hero_luis_LRS.webp);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     z-index: -2;
 }
 
@@ -39,8 +39,16 @@ body {
 
 .menu {
     display: flex;
-    justify-content: center;
-    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+       max-width: 1400px;
+       margin: 0 auto;
+    padding: 0px 25px;
+}
+
+.nav_bar {
+    display: flex;
+    gap: 20px;
 }
 
 .menu a {
@@ -56,6 +64,24 @@ body {
 .menu a.ativo {
     opacity: 1;
 }
+
+.logo_menu img {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+.social i {
+    font-size: 1.4rem;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.social i:hover {
+    opacity: 1;
+}
+
 
 /* HERO (NOME + CARGO) */
 .hero {
