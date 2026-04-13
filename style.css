@@ -11,13 +11,13 @@ body {
     min-height: 80vh;
     color: #4478ff;
     overflow-x: hidden;
-}
+}   
 
 /* FUNDO FIXO */
 .bg {
     position: fixed;
     inset: 0;
-    background-image: url(imagens/Hero_luis_LRS.webp);
+    background-image: url(imagens/Hero_luis_R\ \(1\).webp);
     background-size: cover;
     background-position: bottom;
     z-index: -2;
@@ -302,45 +302,35 @@ footer {
     background: #4478ff;
 }
 
+
+
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
+
     .hero h1 {
         font-size: 2.8rem;
     }
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 0; /* 👈 garante SEM espaço */
-         grid-auto-rows: auto;
+        gap: 0;
+        grid-auto-rows: auto;
     }
 
     .card {
-        height: 250px; /* controla altura padrão */
+        height: 250px;
     }
 
-    /* RESET das posições especiais */
     .grid .card {
         grid-column: auto !important;
         grid-row: auto !important;
     }
 
-}
-
+    /* TROCA DA IMAGEM */
     .bg {
-    position: fixed;
-    inset: 0;
-    background-image: url(imagens/Hero_luis_LRS_m.webp);
-    background-size: cover;
-    background-position: bottom;
-    z-index: -2;
-}
-
-
-
-
-@media (max-width: 768px) {}
-
-@media (max-width: 768px) {
+        background-image: url(imagens/Hero_luis_LRS_m.webp);
+    }
 
     .menu {
         flex-direction: column;
@@ -349,38 +339,27 @@ footer {
         text-align: center;
     }
 
-    /* ORDEM QUE TU QUER */
     .nav_bar {
         order: 1;
+        justify-content: center;
     }
 
     .social {
         order: 2;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
     }
 
     .logo_menu {
         order: 3;
-    }
-
-    /* Centralizar tudo */
-    .nav_bar {
-        justify-content: center;
-    }
-
-    .social {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
+        align-self: center;
+        margin-top: auto;
     }
 
     .logo_menu img {
         margin-top: 30px;
         width: 140px;
         margin: auto;
-    }
-
-    .logo_menu{
-        align-self: center;
-        margin-top: auto;
     }
 }
