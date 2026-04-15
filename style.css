@@ -329,7 +329,8 @@ footer {
 
     /* TROCA DA IMAGEM */
     .bg {
-        background-image: url(imagens/Hero_luis_LRS_m.webp);
+    background-position: left;
+
     }
 
     .menu {
