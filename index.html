@@ -1,88 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="projetos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="bg"></div>
 
     <main class="conteudo">
-        <header class="header">
-            <nav class="menu">
+      <header class="header">
+        <nav class="menu">
+          <div class="logo_menu">
+            <img src="imagens/logos/normal-azul.png" alt="logo do site" />
+          </div>
 
-                <div class="logo_menu">
-                    <img src="imagens/logos/normal-azul.png" alt="logo do site">
-                </div>
+          <div class="nav_bar">
+            <a href="#" data-section="sobre">QUEM SOU</a>
+            <a href="#" data-section="portfolio">PORTFÓLIO</a>
+          </div>
 
-                <div class="nav_bar">
-                    <a href="#" data-section="sobre">QUEM SOU</a>
-                    <a href="#" data-section="portfolio">PORTFÓLIO</a>
-                </div>
+          <div class="social">
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </nav>
+      </header>
+      <section class="hero">
+        <h1 id="titulo" class="titulo">Luís R. Silva</h1>
+        <p id="subtitulo" class="cargo">Designer Gráfico e Web</p>
+      </section>
 
-                <div class="social">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
-            </nav>
-        </header>
-        <section class="hero">
-            <h1 id="titulo" class="titulo">Luís R. Silva</h1>
-            <p id="subtitulo" class="cargo">Designer Gráfico e Web</p>
-        </section>
+      <section class="secao painel ativa" id="sobre">
+        <h2 class="titulo-secao">Sobre mim</h2>
+        <p class="descricao">
+          Profissional da área gráfica com mais de 20 anos de experiência em
+          design e produção visual. Atuo no desenvolvimento de identidades
+          visuais, embalagens e materiais gráficos, além de projetos para web
+          como landing pages e sites institucionais. Tenho formação em
+          desenvolvimento mobile e experiência na criação de soluções digitais
+          com foco em comunicação clara e design funciona
+        </p>
+        <div class="divisor"></div>
+        <div class="painel-conteudo">
+          <form class="formulario">
+            <input type="email" placeholder="Email" />
+            <textarea rows="4" placeholder="Mensagem"></textarea>
+            <button class="botao-enviar">Enviar</button>
+          </form>
+        </div>
+      </section>
 
-        <section class="secao painel ativa" id="sobre">
-             <h2 class="titulo-secao">Sobre mim</h2>
-            <p class="descricao">
-                    Profissional da área gráfica com mais de 20 anos de experiência em design e produção visual.
-                    Atuo no desenvolvimento de identidades visuais, embalagens e materiais gráficos, além de projetos para web como landing pages e sites institucionais.
-                    Tenho formação em desenvolvimento mobile e experiência na criação de soluções digitais com foco em comunicação clara e design funciona
-                </p>
-                <div class="divisor"></div>
-            <div class="painel-conteudo">
-                <form class="formulario">
-                    <input type="email" placeholder="Email">
-                    <textarea rows="4" placeholder="Mensagem"></textarea>
-                    <button class="botao-enviar">Enviar</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="secao painel" id="portfolio">
-            <div class="painel-conteudo painel-portfolio">
-
-                <div class="grid">
-                    <div class="card logo">01</div>
-                    <div class="card site_1">02</div>
-                    <div class="card site_2">03</div>
-                    <div class="card alto embalagem">04</div>
-                    <div class="card site_3">05</div>
-                    <div class="card alto landing">06</div>
-                    <div class="card sete agenda">07</div>
-                    <div class="card oito site_4">08</div>
-                </div>
-
-            </div>
-        </section>
-
+      <section class="secao painel" id="portfolio">
+        <div class="painel-conteudo painel-portfolio">
+          <div class="grid">
+            <div class="card logo" data-id="logo">01</div>
+            <div class="card site_1" data-id="site1">02</div>
+            <div class="card site_2" data-id="site2"></div>
+            <div class="card alto embalagem">04</div>
+            <div class="card site_3">05</div>
+            <div class="card alto landing">06</div>
+            <div class="card sete agenda" data-id="agenda">07</div>
+            <div class="card oito site_4">08</div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>Todos Direitos reservados &copy; 2026 </p>
+      <p>Todos Direitos reservados &copy; 2026</p>
     </footer>
 
+    <section id="projeto-logo" class="projeto-modal logo">
+      <div class="grid-projeto">
+        <div class="item i1">1</div>
+        <div class="item i2">2</div>
+        <div class="item i3">3</div>
+        <div class="item i4">4</div>
+        <div class="item i5">5</div>
+        <div class="item i6">6</div>
+      </div>
+    </section>
+
+    <section id="projeto-site1" class="projeto-modal site1">
+      <header>
+        <h2>Site Institucional</h2>
+        <p class="intro">Projeto focado em experiência e design moderno</p>
+      </header>
+
+      <img src="img1.jpg" />
+
+      <p>O objetivo foi criar um layout limpo e funcional...</p>
+
+      <img src="img2.jpg" />
+
+      <p>Foram utilizados conceitos de hierarquia visual...</p>
+    </section>
+
+    <section id="projeto-site2" class="projeto-modal site2">
+      <header>
+        <h2>Projeto Site 2</h2>
+      </header>
+
+      <p>
+        Este projeto foi uma landing page focada em conversão, com design
+        moderno e navegação simples.
+      </p>
+
+      <img src="imagens/Galeria/site2.jpg" alt="" />
+
+      <footer>
+        <p>Tecnologias utilizadas:</p>
+
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </footer>
+    </section>
+
+    <section id="projeto-agenda" class="projeto-modal agenda">
+      <div class="grid-projeto">
+        <div class="item i1">
+          <img
+            src="imagens/Galeria/agenda/agenda1.webp"
+            alt="foto agenda da Unialcance"
+          />
+        </div>
+        <div class="item i2">
+          <img
+            src="imagens/Galeria/agenda/agenda2.webp"
+            alt="foto agenda da Unialcance"
+          />
+        </div>
+        <div class="item i3">
+          <img src="imagens/Galeria/agenda/agenda3.webp" alt="" />
+        </div>
+        <div class="item i4">
+          <img src="imagens/Galeria/agenda/agenda4.webp" alt="" />
+        </div>
+        <div class="item i5">
+          <h2>Agenda Unialcance</h2>
+          <p>
+            Esta agenda foi desenvolvida para o Instituto Unialcance, de Dois
+            Irmãos. O projeto fez parte das comemorações de 20 anos da
+            instituição, com foco em uma identidade visual organizada, moderna e
+            funcional para o dia a dia.
+          </p>
+        </div>
+        <div class="item i6">
+          <p>
+            Todo o processo criativo — do conceito à finalização — foi realizado
+            por mim, utilizando ferramentas como Photoshop e CorelDRAW.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="modal" class="modal">
+      <div class="modal-content">
+        <span class="fechar">✖</span>
+        <div id="modal-body"></div>
+      </div>
+    </section>
 
     <script src="script.js"></script>
-</body>
-
+    <script src="modal.js"></script>
+  </body>
 </html>

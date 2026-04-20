@@ -21,7 +21,7 @@ links.forEach(link => {
 
         if (id === 'portfolio') {
             titulo.textContent = 'Meu Trabalho'
-            subtitulo.textContent = 'IMpresso e Digital'
+            subtitulo.textContent = 'Impresso e Digital'
         } else {
             titulo.textContent = 'Luís R. Silva'
             subtitulo.textContent = 'Designer Gráfico & Web'
