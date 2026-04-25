@@ -60,11 +60,27 @@
           com foco em comunicação clara e design funciona
         </p>
         <div class="divisor"></div>
+
+        <!-- FORMULARIO -->
         <div class="painel-conteudo">
-          <form class="formulario">
-            <input type="email" placeholder="Email" />
-            <textarea rows="4" placeholder="Mensagem"></textarea>
-            <button class="botao-enviar">Enviar</button>
+          <form
+            class="formulario"
+            action="https://formsubmit.co/contato@lrwebdesign.com.br"
+            method="POST"
+          >
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea
+              name="mensagem"
+              rows="4"
+              placeholder="Mensagem"
+              required
+            ></textarea>
+            <button type="submit" class="botao-enviar">Enviar</button>
+
+            <!-- configurações extras -->
+            <input type="hidden" name="_subject" value="Novo contato do site" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/obrigado.html">
           </form>
         </div>
       </section>
