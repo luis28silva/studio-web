@@ -91,7 +91,6 @@ body {
 .logo_menu img:hover {
   /* Um brilho azul suave e uma leve pulsação */
   filter: drop-shadow(0 0 15px rgba(68, 120, 255, 0.8));
-  transform: scale(1.02); /* Aumenta 2% de tamanho */
 }
 
 .social i {
@@ -301,6 +300,14 @@ footer {
 
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
+  a,
+  button,
+  .social i,
+  .logo_menu img {
+    -webkit-tap-highlight-color: transparent; /* Safari/Chrome mobile */
+    tap-highlight-color: transparent; /* Padrão (futuro) */
+  }
+
   .top-bar-mobile {
     display: block;
     background-color: #4478ff;
@@ -343,6 +350,21 @@ footer {
   }
 
   .bg {
+    /* 1. Trocar para position: absolute se o fixed ainda causar pulos */
+    position: fixed;
+
+    /* 2. O segredo: usar 100vmax ou uma altura fixa maior para evitar o recalculo da barra */
+    height: 120%;
+    top: 0;
+
+    /* 3. Garante que a imagem não tente se mover enquanto você rola */
+    background-attachment: scroll;
+
+    /* 4. Força o uso da placa de vídeo do celular para suavizar */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+
+    /* 5. Ajuste a posição para o seu rosto ficar bem enquadrado */
     background-position: 36% center;
   }
 
@@ -383,13 +405,9 @@ footer {
   /* Feedback de Toque */
   .social i:active,
   .menu a:active {
-    transform: scale(0.9);
     filter: drop-shadow(0 0 10px #4478ff);
   }
 
-  .formulario button:active {
-    transform: translateY(2px);
-  }
   /* Efeito de brilho ao tocar na logo (Mobile) */
   .logo_menu img:active {
     /* Brilho MUITO mais intenso (aumentei o raio e a opacidade) */
@@ -400,13 +418,5 @@ footer {
     transform: none;
 
     transition: 0.1s; /* Feedback rápido */
-  }
-
-  a,
-  button,
-  .social i,
-  .logo_menu img {
-    -webkit-tap-highlight-color: transparent; /* Safari/Chrome mobile */
-    tap-highlight-color: transparent; /* Padrão (futuro) */
   }
 }
