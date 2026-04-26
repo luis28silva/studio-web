@@ -26,3 +26,17 @@ cards.forEach(card => {
 fechar.addEventListener('click', () => {
   modal.style.display = 'none';
 });
+
+// Fechar ao clicar fora da caixa branca
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Fechar com a tecla ESC
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+    }
+});
