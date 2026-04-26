@@ -313,6 +313,17 @@ footer {
     font-weight: normal;
   }
 
+  .header {
+    padding-top: 20px; /* Reduzi de 70px para 20px */
+    top: 0;
+  }
+
+  .hero {
+    min-height: auto; /* Remove a altura mínima forçada que criava o vazio */
+    padding-top: 20px;
+    padding-bottom: 50px; /* Espaço apenas para não colar no fim da tela */
+  }
+
   .hero h1 {
     font-size: 2.8rem;
   }
@@ -338,14 +349,13 @@ footer {
   /* AJUSTE DO MENU MOBILE */
   .menu {
     flex-direction: column; /* Empilha os elementos */
-    min-height: auto;
-    padding-top: 20px;
-    gap: 30px; /* Mais espaço entre blocos */
+    padding-top: 10px;
+    gap: 15px; /* Mais espaço entre blocos */
   }
 
   .nav_bar {
     order: 1; /* PRIMEIRO: Menus lá no topo */
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
   }
 
@@ -358,12 +368,11 @@ footer {
 
   .logo_menu {
     order: 3; /* TERCEIRO: O Logo fica embaixo dos outros, no "meio" da área do cabeçalho */
-    align-self: center;
   }
 
   .logo_menu img {
-    width: 220px; /* Logo grande como você queria */
-    margin: 120px auto 40px auto; /* Espaço generoso para dar destaque */
+    width: 200px; /* Logo grande como você queria */
+    margin: 100px auto 40px auto; /* Espaço generoso para dar destaque */
   }
 
   .nav_bar a {
@@ -383,9 +392,21 @@ footer {
   }
   /* Efeito de brilho ao tocar na logo (Mobile) */
   .logo_menu img:active {
-    /* Brilho mais intenso para feedback tátil */
-    filter: drop-shadow(0 0 20px rgba(68, 120, 255, 1));
-    transform: scale(0.98); /* Dá um leve "aperto" (efeito de botão físico) */
-    transition: 0.1s; /* Feedback instantâneo */
+    /* Brilho MUITO mais intenso (aumentei o raio e a opacidade) */
+    filter: drop-shadow(0 0 30px rgba(68, 120, 255, 1));
+
+    /* Removi o 'scale(0.98)' para não dar o efeito de aperto. 
+       Mantemos apenas o brilho puro. */
+    transform: none;
+
+    transition: 0.1s; /* Feedback rápido */
+  }
+
+  a,
+  button,
+  .social i,
+  .logo_menu img {
+    -webkit-tap-highlight-color: transparent; /* Safari/Chrome mobile */
+    tap-highlight-color: transparent; /* Padrão (futuro) */
   }
 }
