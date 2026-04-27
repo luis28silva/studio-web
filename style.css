@@ -98,6 +98,7 @@ body {
   opacity: 0.6;
   transition: 0.3s;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .social i:hover {
@@ -321,18 +322,23 @@ footer {
   }
 
   .header {
-    padding-top: 20px; /* Reduzi de 70px para 20px */
+    padding-top: 50px; /* Reduzi de 70px para 20px */
     top: 0;
   }
 
   .hero {
     min-height: auto; /* Remove a altura mínima forçada que criava o vazio */
     padding-top: 20px;
-    padding-bottom: 50px; /* Espaço apenas para não colar no fim da tela */
+    padding-bottom: 60px; /* Espaço apenas para não colar no fim da tela */
   }
 
   .hero h1 {
     font-size: 2.8rem;
+  }
+
+  #subtitulo {
+    font-size: 20px;
+    letter-spacing: 1px; /* Dá um toque elegante para frases menores */
   }
 
   .grid {
@@ -371,6 +377,7 @@ footer {
   /* AJUSTE DO MENU MOBILE */
   .menu {
     flex-direction: column; /* Empilha os elementos */
+    align-items: center;
     padding-top: 10px;
     gap: 15px; /* Mais espaço entre blocos */
   }
@@ -386,6 +393,7 @@ footer {
     gap: 25px;
     display: flex;
     justify-content: center;
+    margin-top: 40px;
   }
 
   .logo_menu {
@@ -393,7 +401,7 @@ footer {
   }
 
   .logo_menu img {
-    width: 200px; /* Logo grande como você queria */
+    width: 180px; /* Logo grande como você queria */
     margin: 100px auto 40px auto; /* Espaço generoso para dar destaque */
   }
 
