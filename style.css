@@ -15,6 +15,18 @@ body {
   flex-direction: column;
 }
 
+/* Esconde elementos do mobile no desktop */
+.menu-hamburguer,
+.btn-fechar,
+.social-mobile-menu {
+  display: none;
+}
+
+/* Garante que o social do desktop apareça */
+.social-desktop {
+  display: flex;
+}
+
 /* FUNDO FIXO */
 /* FUNDO FIXO CORRIGIDO */
 .bg {
@@ -301,12 +313,18 @@ footer {
 
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
+  /* Impede o cinza de toque no mobile */
   a,
   button,
   .social i,
   .logo_menu img {
-    -webkit-tap-highlight-color: transparent; /* Safari/Chrome mobile */
-    tap-highlight-color: transparent; /* Padrão (futuro) */
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+  }
+
+  /* Esconde o social que é apenas do desktop */
+  .social-desktop {
+    display: none;
   }
 
   .top-bar-mobile {
@@ -318,113 +336,128 @@ footer {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: normal;
   }
 
+  /* Header Mobile: Mantém Logo e Hambúrguer na mesma linha */
   .header {
-    padding-top: 50px; /* Reduzi de 70px para 20px */
+    padding-top: 20px;
     top: 0;
   }
 
+  .menu {
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+    padding-top: 10px;
+    gap: 20px; /* Espaço entre o botão e o logo */
+    position: relative;
+  }
+
+  /* 2. Garante que o botão hamburguer fique no topo */
+  .menu-hamburguer {
+    display: block;
+    font-size: 30px;
+    color: #4478ff;
+    cursor: pointer;
+    order: 1; /* Força ser o primeiro */
+    margin-left: auto; /* Joga o botão para a direita se quiser, ou tire para centralizar */
+    padding-right: 10px;
+  }
+
+  /* A TELA AZUL (Menu Mobile) */
+  .nav_bar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido */
+    width: 100%;
+    height: 100vh;
+    background-color: #4478ff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    z-index: 9999;
+    gap: 0; /* Reset do gap do desktop */
+  }
+
+  .nav_bar.ativo {
+    right: 0; /* Entra na tela */
+  }
+
+  .nav_bar a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+    opacity: 1; /* Links bem visíveis no azul */
+  }
+
+  .btn-fechar {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+  }
+
+  /* Redes Sociais dentro da tela azul */
+  .social-mobile-menu {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  .social-mobile-menu i {
+    color: white;
+    font-size: 2rem;
+    margin: 0 20px;
+    opacity: 1;
+  }
+
+  /* Ajustes de Hero e Background no Mobile */
   .hero {
-    min-height: auto; /* Remove a altura mínima forçada que criava o vazio */
-    padding-top: 20px;
-    padding-bottom: 60px; /* Espaço apenas para não colar no fim da tela */
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 
   .hero h1 {
     font-size: 2.8rem;
   }
-
   #subtitulo {
-    font-size: 20px;
-    letter-spacing: 1px; /* Dá um toque elegante para frases menores */
+    font-size: 18px;
+  }
+
+  .bg {
+    height: 120%;
+    background-attachment: scroll;
+    transform: translateZ(0);
+    background-position: 36% center;
   }
 
   .grid {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }
-
   .card {
     height: 250px;
   }
-
   .grid .card {
     grid-column: auto !important;
     grid-row: auto !important;
   }
 
-  .bg {
-    /* 1. Trocar para position: absolute se o fixed ainda causar pulos */
-    position: fixed;
-
-    /* 2. O segredo: usar 100vmax ou uma altura fixa maior para evitar o recalculo da barra */
-    height: 120%;
-    top: 0;
-
-    /* 3. Garante que a imagem não tente se mover enquanto você rola */
-    background-attachment: scroll;
-
-    /* 4. Força o uso da placa de vídeo do celular para suavizar */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-
-    /* 5. Ajuste a posição para o seu rosto ficar bem enquadrado */
-    background-position: 36% center;
+  /* Logo do Menu Mobile (se quiser manter ela aparecendo no fundo ou dentro do menu) */
+  .logo_menu img {
+    width: 150px;
   }
-
-  /* AJUSTE DO MENU MOBILE */
-  .menu {
-    flex-direction: column; /* Empilha os elementos */
-    align-items: center;
-    padding-top: 10px;
-    gap: 15px; /* Mais espaço entre blocos */
-  }
-
-  .nav_bar {
-    order: 1; /* PRIMEIRO: Menus lá no topo */
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .social {
-    order: 2; /* SEGUNDO: Redes sociais logo abaixo do menu */
-    gap: 25px;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-
+  /* 3. O Logo fica logo abaixo */
   .logo_menu {
-    order: 3; /* TERCEIRO: O Logo fica embaixo dos outros, no "meio" da área do cabeçalho */
+    order: 2; /* Força ser o segundo */
   }
 
   .logo_menu img {
-    width: 180px; /* Logo grande como você queria */
-    margin: 100px auto 40px auto; /* Espaço generoso para dar destaque */
-  }
-
-  .nav_bar a {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  /* Feedback de Toque */
-  .social i:active,
-  .menu a:active {
-    filter: drop-shadow(0 0 10px #4478ff);
-  }
-
-  /* Efeito de brilho ao tocar na logo (Mobile) */
-  .logo_menu img:active {
-    /* Brilho MUITO mais intenso (aumentei o raio e a opacidade) */
-    filter: drop-shadow(0 0 30px rgba(68, 120, 255, 1));
-
-    /* Removi o 'scale(0.98)' para não dar o efeito de aperto. 
-       Mantemos apenas o brilho puro. */
-    transform: none;
-
-    transition: 0.1s; /* Feedback rápido */
+    width: 180px; /* Tamanho que você gosta */
+    margin: 0 auto;
+    display: block;
   }
 }

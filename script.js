@@ -60,3 +60,24 @@ window.addEventListener('load', () => {
         ativarSecao('sobre');
     }
 });
+
+const menuIcon = document.getElementById('menu-icon');
+const closeIcon = document.getElementById('close-icon');
+const navLinks = document.getElementById('nav-links');
+
+// Abre o menu
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.add('ativo');
+});
+
+// Fecha o menu ao clicar no X
+closeIcon.addEventListener('click', () => {
+    navLinks.classList.remove('ativo');
+});
+
+// Fecha o menu ao clicar em qualquer link (importante!)
+document.querySelectorAll('.nav_bar a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('ativo');
+    });
+});
