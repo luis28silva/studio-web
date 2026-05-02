@@ -322,29 +322,67 @@ footer {
     display: none;
   }
 
-  /* Header Mobile: Mantém Logo e Hambúrguer na mesma linha */
-  .header {
-    padding-top: 20px;
+  /* Reset de fundo do Body Mobile */
+  body {
+    background-image: none !important;
+    background-color: #0d1117; /* Uma cor escura de segurança */
+  }
+
+  /* Configuração da Camada de Fundo Mobile (fora do body) */
+  .fundo-mobile {
+    display: block !important; /* Garante que apareça */
+    position: absolute; /* Para rolar com a página */
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Altura da tela inicial */
+    background-image: url("imagens/mobile-foto.webp"); /* Sua foto mobile */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: -1; /* Fica atrás do conteúdo */
+  }
+
+  /* Esconde o container .bg original no mobile para não duplicar */
+  .bg {
+    display: none !important;
+  }
+
+  /* HEADER MOBILE: Mantém Logo e Hambúrguer na mesma linha */
+  .header {
+    padding: 20px 0px;
+    top: 0;
+    width: 100%;
+    position: relative; /* ou absolute, dependendo do teste */
+    z-index: 1000;
   }
 
   .menu {
-    flex-direction: column;
-    align-items: center; /* Centraliza tudo horizontalmente */
-    padding-top: 10px;
-    gap: 20px; /* Espaço entre o botão e o logo */
-    position: relative;
+    flex-direction: row; /* Lado a lado */
+    justify-content: space-between; /* Um em cada ponta */
+    align-items: center;
+    padding: 0 20px;
+    gap: 0;
   }
 
-  /* 2. Garante que o botão hamburguer fique no topo */
+  /* Garante que o hambúrguer fique na direita */
   .menu-hamburguer {
     display: block;
     font-size: 30px;
     color: #4478ff;
     cursor: pointer;
-    order: 1; /* Força ser o primeiro */
-    margin-left: auto; /* Joga o botão para a direita se quiser, ou tire para centralizar */
-    padding-right: 10px;
+    order: 2; /* Segundo item */
+  }
+
+  /* Garante que o logo fique na esquerda */
+  .logo_menu {
+    order: 1; /* Primeiro item */
+    margin: 0;
+  }
+
+  .logo_menu img {
+    width: 150px; /* Reduzi um pouco para dar mais respiro */
+    display: block;
   }
 
   /* A TELA AZUL (Menu Mobile) */
@@ -360,7 +398,7 @@ footer {
     align-items: center;
     transition: 0.4s ease-in-out;
     z-index: 9999;
-    gap: 0; /* Reset do gap do desktop */
+    gap: 0;
   }
 
   .nav_bar.ativo {
@@ -372,7 +410,7 @@ footer {
     font-size: 24px;
     font-weight: bold;
     margin: 15px 0;
-    opacity: 1; /* Links bem visíveis no azul */
+    opacity: 1;
   }
 
   .btn-fechar {
@@ -397,56 +435,44 @@ footer {
     opacity: 1;
   }
 
-  /* Ajustes de Hero e Background no Mobile */
+  /* HERO MOBILE */
   .hero {
-    min-height: auto;
-    padding-top: 40px;
-    padding-bottom: 60px;
+    min-height: 70vh; /* Altura equilibrada para o texto e "espiar" o próximo conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px; /* Respiro de segurança para o logo/hambúrguer */
+    padding-bottom: 20px;
   }
 
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.9rem;
+    margin: 0;
   }
+
   #subtitulo {
-    font-size: 18px;
+    font-size: 1.3rem;
+    margin-top: 10px;
   }
 
-  .bg {
-    height: 120%;
-    background-attachment: scroll;
-    transform: translateZ(0);
-    background-position: 36% center;
-  }
-
+  /* AJUSTE DE TRANSIÇÃO ENTRE SEÇÕES */
   #sobre {
-    margin-top: 120px; /* Mesma medida que usamos no grid para manter o padrão */
+    margin-top: 5vh;
   }
 
+  /* GRID PORTFÓLIO MOBILE */
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Uma coluna só */
     grid-auto-rows: auto;
-    margin-top: 100px;
+    margin-top: 5vh;
   }
+
   .card {
     height: 250px;
   }
+
   .grid .card {
     grid-column: auto !important;
     grid-row: auto !important;
   }
-
-  /* Logo do Menu Mobile (se quiser manter ela aparecendo no fundo ou dentro do menu) */
-  .logo_menu img {
-    width: 150px;
-  }
-  /* 3. O Logo fica logo abaixo */
-  .logo_menu {
-    order: 2; /* Força ser o segundo */
-  }
-
-  .logo_menu img {
-    width: 180px; /* Tamanho que você gosta */
-    margin: 0 auto;
-    display: block;
-  }
-}
+} /* <--- ESTA CHAVE FECHA O @MEDIA MOBILE E ESTAVA FALTANDO NO FIM! */
