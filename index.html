@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="projetos.css" />
-    <link rel="stylesheet" href="abertura.css">
+    <link rel="stylesheet" href="abertura.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -28,49 +28,52 @@
   </head>
 
   <!-- Tela de Carregamento -->
-<div id="preloader">
-  <div class="loader-container">
-    <img src="imagens/logos/lr-simbolo sem fundo.png" alt="Luís R. Silva" class="loader-logo">
-    <div class="spinner"></div>
+  <div id="preloader">
+    <div class="loader-container">
+      <img
+        src="imagens/logos/lr-simbolo sem fundo.png"
+        alt="Luís R. Silva"
+        class="loader-logo"
+      />
+      <div class="spinner"></div>
+    </div>
   </div>
-</div>
 
   <body>
     <div class="fundo-mobile"></div>
     <div class="bg"></div>
     <main class="conteudo">
-
       <header class="header">
-  <nav class="menu">
-    <!-- 1. LOGO (Esquerda) -->
-    <div class="logo_menu">
-      <img src="imagens/logos/normal-azul.png" alt="Luís R. Silva" />
-    </div>
+        <nav class="menu">
+          <!-- 1. LOGO (Esquerda) -->
+          <div class="logo_menu">
+            <img src="imagens/logos/normal-azul.png" alt="Luís R. Silva" />
+          </div>
 
-    <!-- 2. ÍCONE HAMBÚRGUER (Direita no Mobile) -->
-    <i class="fa-solid fa-bars menu-hamburguer" id="menu-icon"></i>
+          <!-- 2. ÍCONE HAMBÚRGUER (Direita no Mobile) -->
+          <i class="fa-solid fa-bars menu-hamburguer" id="menu-icon"></i>
 
-    <!-- 3. TELA AZUL (Menu Mobile - Apenas UMA vez) -->
-    <div class="nav_bar" id="nav-links">
-      <!-- Botão de fechar que fica dentro da tela azul -->
-      <div class="btn-fechar" id="close-icon">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
+          <!-- 3. TELA AZUL (Menu Mobile - Apenas UMA vez) -->
+          <div class="nav_bar" id="nav-links">
+            <!-- Botão de fechar que fica dentro da tela azul -->
+            <div class="btn-fechar" id="close-icon">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
 
-      <!-- Links de navegação -->
-      <a href="#" data-section="sobre">QUEM SOU</a>
-      <a href="#" data-section="portfolio">PORTFÓLIO</a>
-    </div>
+            <!-- Links de navegação -->
+            <a href="#" data-section="sobre">QUEM SOU</a>
+            <a href="#" data-section="portfolio">PORTFÓLIO</a>
+          </div>
 
-    <!-- 4. REDES SOCIAIS (Apenas Desktop) -->
-    <div class="social social-desktop">
-      <i class="fa-brands fa-whatsapp"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-linkedin"></i> <!-- Ajustei para uma rede diferente como exemplo -->
-    </div>
-  </nav>
-</header>
-
+          <!-- 4. REDES SOCIAIS (Apenas Desktop) -->
+          <div class="social social-desktop">
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <!-- Ajustei para uma rede diferente como exemplo -->
+          </div>
+        </nav>
+      </header>
 
       <section class="hero">
         <h1 id="titulo" class="titulo">Luís R. Silva</h1>
@@ -133,8 +136,23 @@
             <div class="card alto landing">06</div>
             <div class="card sete agenda" data-id="agenda">07</div>
             <div class="card oito site_4">
-              <video autoplay loop muted playsinline style=" width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-                <source src="imagens/Galeria/site-daiana/site-daiana.mp4" type="video/mp4"/> Seu navegador não suporta vídeos.
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              >
+                <source
+                  src="imagens/Galeria/site-daiana/site-daiana.mp4"
+                  type="video/mp4"
+                />
+                Seu navegador não suporta vídeos.
               </video>
             </div>
           </div>
