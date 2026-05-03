@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="projetos.css" />
+    <link rel="stylesheet" href="abertura.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -26,45 +27,59 @@
     />
   </head>
 
+  <!-- Tela de Carregamento -->
+<div id="preloader">
+  <div class="loader-container">
+    <img src="imagens/logos/lr-simbolo sem fundo.png" alt="Luís R. Silva" class="loader-logo">
+    <div class="spinner"></div>
+  </div>
+</div>
+
   <body>
     <div class="fundo-mobile"></div>
     <div class="bg"></div>
     <main class="conteudo">
+
       <header class="header">
-        <nav class="menu">
-          <div class="logo_menu">
-            <img src="imagens/logos/normal-azul.png" alt="Luís R. Silva" />
-          </div>
+  <nav class="menu">
+    <!-- 1. LOGO (Esquerda) -->
+    <div class="logo_menu">
+      <img src="imagens/logos/normal-azul.png" alt="Luís R. Silva" />
+    </div>
 
-          <div class="menu-hamburguer" id="menu-icon">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+    <!-- 2. ÍCONE HAMBÚRGUER (Direita no Mobile) -->
+    <i class="fa-solid fa-bars menu-hamburguer" id="menu-icon"></i>
 
-          <div class="nav_bar" id="nav-links">
-            <div class="btn-fechar" id="close-icon">
-              <i class="fa-solid fa-xmark"></i>
-            </div>
+    <!-- 3. TELA AZUL (Menu Mobile - Apenas UMA vez) -->
+    <div class="nav_bar" id="nav-links">
+      <!-- Botão de fechar que fica dentro da tela azul -->
+      <div class="btn-fechar" id="close-icon">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
 
-            <a href="#" data-section="sobre">QUEM SOU</a>
-            <a href="#" data-section="portfolio">PORTFÓLIO</a>
+      <!-- Links de navegação -->
+      <a href="#" data-section="sobre">QUEM SOU</a>
+      <a href="#" data-section="portfolio">PORTFÓLIO</a>
+    </div>
 
-            <div class="social social-mobile-menu">
-              <i class="fa-brands fa-whatsapp"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-instagram"></i>
-            </div>
-          </div>
+    <!-- 4. REDES SOCIAIS (Apenas Desktop) -->
+    <div class="social social-desktop">
+      <i class="fa-brands fa-whatsapp"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-linkedin"></i> <!-- Ajustei para uma rede diferente como exemplo -->
+    </div>
+  </nav>
+</header>
 
-          <div class="social social-desktop">
-            <i class="fa-brands fa-whatsapp"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-        </nav>
-      </header>
+
       <section class="hero">
         <h1 id="titulo" class="titulo">Luís R. Silva</h1>
         <p id="subtitulo" class="cargo">Designer Gráfico e Web</p>
+        <div class="social social-hero-mobile">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
       </section>
 
       <section class="secao painel ativa" id="sobre">
@@ -242,5 +257,6 @@
 
     <script src="script.js"></script>
     <script src="modal.js"></script>
+    <script src="abertura.js"></script>
   </body>
 </html>

@@ -1,0 +1,46 @@
+/* Estilo do Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0d1117; /* Cor escura para combinar com seu site */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Acima de TUDO */
+  transition: opacity 0.5s ease;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.loader-logo {
+  width: 60px; /* Ajuste conforme necessário */
+  margin-bottom: 40px;
+  display: block;
+}
+
+/* O Círculo Girando (Spinner) */
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 5px solid rgba(68, 120, 255, 0.2); /* Azul clarinho */
+  border-top: 5px solid #4478ff; /* Seu azul principal */
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Classe para sumir com o loader */
+.loader-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

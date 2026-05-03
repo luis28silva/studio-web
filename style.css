@@ -18,15 +18,14 @@ body {
 /* Esconde elementos do mobile no desktop */
 .menu-hamburguer,
 .btn-fechar,
-.social-mobile-menu {
-  display: none;
+.social-hero-mobile {
+  display: none !important;
 }
 
 /* Garante que o social do desktop apareça */
 .social-desktop {
-  display: flex;
+  display: flex !important;
 }
-
 /* FUNDO FIXO */
 /* FUNDO FIXO CORRIGIDO */
 .bg {
@@ -317,9 +316,8 @@ footer {
     tap-highlight-color: transparent;
   }
 
-  /* Esconde o social que é apenas do desktop */
   .social-desktop {
-    display: none;
+    display: none !important;
   }
 
   /* Reset de fundo do Body Mobile */
@@ -336,14 +334,14 @@ footer {
     left: 0;
     width: 100%;
     height: 100vh; /* Altura da tela inicial */
-    background-image: url("imagens/mobile-foto.webp"); /* Sua foto mobile */
+    background-image: url("imagens/mb-lr.webp"); /* Sua foto mobile */
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     z-index: -1; /* Fica atrás do conteúdo */
   }
 
-  /* Esconde o container .bg original no mobile para não duplicar */
+  /* APAGAR ISSO - Esconde o container .bg original no mobile para não duplicar */
   .bg {
     display: none !important;
   }
@@ -353,8 +351,72 @@ footer {
     padding: 20px 0px;
     top: 0;
     width: 100%;
-    position: relative; /* ou absolute, dependendo do teste */
+    position: relative;
     z-index: 1000;
+  }
+
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 0;
+  }
+
+  /* Estilo corrigido (SEM O PONTO ANTES DO COMENTÁRIO) */
+  .menu-hamburguer {
+    display: block !important;
+    font-size: 30px !important;
+    color: #4478ff;
+    cursor: pointer;
+    order: 2; /* Joga para a direita */
+  }
+  .menu-hamburguer {
+    display: none; /* Esconde o hambúrguer no PC por padrão */
+  }
+
+  /* O "X" dentro da tela azul (btn-fechar) */
+  .btn-fechar {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;
+  }
+
+  .btn-fechar i {
+    font-size: 35px !important;
+    color: #ffffff !important; /* FORÇA A COR BRANCA NO ÍCONE */
+  }
+
+  /* A tela azul continua com o deslizamento (Slide), que você gostou */
+  .nav_bar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #4478ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition:
+      right 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    order: 2;
+  }
+
+  .nav_bar.ativo {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
   }
 
   .menu {
@@ -363,15 +425,6 @@ footer {
     align-items: center;
     padding: 0 20px;
     gap: 0;
-  }
-
-  /* Garante que o hambúrguer fique na direita */
-  .menu-hamburguer {
-    display: block;
-    font-size: 30px;
-    color: #4478ff;
-    cursor: pointer;
-    order: 2; /* Segundo item */
   }
 
   /* Garante que o logo fique na esquerda */
@@ -389,60 +442,69 @@ footer {
   .nav_bar {
     position: fixed;
     top: 0;
-    right: -100%; /* Escondido */
+    right: -100%; /* Começa escondido na DIREITA */
     width: 100%;
     height: 100vh;
     background-color: #4478ff;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: 0.4s ease-in-out;
     z-index: 9999;
     gap: 0;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      right 0.5s ease-in-out,
+      opacity 0.5s ease-in-out,
+      visibility 0.5s;
   }
 
+  /* Quando o menu abrir */
   .nav_bar.ativo {
-    right: 0; /* Entra na tela */
+    right: 0; /* Desliza para o centro */
+    opacity: 1; /* Ganha cor */
+    visibility: visible;
   }
 
   .nav_bar a {
     color: white;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: normal;
     margin: 15px 0;
     opacity: 1;
   }
 
-  .btn-fechar {
-    display: block;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 35px;
-    color: white;
+  .social-hero-mobile {
+    display: none;
   }
 
-  /* Redes Sociais dentro da tela azul */
-  .social-mobile-menu {
-    display: flex;
-    margin-top: 40px;
+  /* Faz os ícones aparecerem abaixo do nome no mobile */
+  .social-hero-mobile {
+    display: flex !important;
+    margin-top: 20px;
+    gap: 25px;
+    justify-content: center;
   }
 
-  .social-mobile-menu i {
-    color: white;
-    font-size: 2rem;
-    margin: 0 20px;
-    opacity: 1;
+  .social-hero-mobile i {
+    font-size: 1.5rem; /* Tamanho confortável para toque */
+    opacity: 1; /* Bem visíveis */
+    transition: 0.3s;
+    margin: 0; /* Remove a margem esquerda do desktop */
   }
 
   /* HERO MOBILE */
+
   .hero {
-    min-height: 70vh; /* Altura equilibrada para o texto e "espiar" o próximo conteúdo */
+    min-height: 70vh; /* Mantém 70% da altura da tela */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 120px; /* Respiro de segurança para o logo/hambúrguer */
-    padding-bottom: 20px;
+    justify-content: center; /* Centraliza verticalmente o texto e os ícones */
+    align-items: center; /* Centraliza horizontalmente o texto e os ícones */
+    position: relative; /* Importante para o z-index */
+    z-index: 10; /* Garante que fique em cima da foto de fundo mobile */
   }
 
   .hero h1 {
@@ -450,9 +512,39 @@ footer {
     margin: 0;
   }
 
+  /* AJUSTE ESPECÍFICO PARA A SEÇÃO SOBRE E FORMULÁRIO */
+  #sobre {
+    padding-left: 25px !important; /* Recuo na esquerda */
+    padding-right: 25px !important; /* Recuo na direita */
+    box-sizing: border-box;
+    padding-top: 40px !important; /* Espaço antes do título "Sobre Mim" */
+    padding-bottom: 40px !important; /* Espaço depois do botão "Enviar" */ /* Garante que o padding não "empurre" a largura para fora */
+  }
+
+  .descricao {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center; /* Ou 'justify', se preferir o texto alinhado dos dois lados */
+  }
+
+  /* Ajuste do Formulário para não grudar */
+  .formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    width: 100%;
+    box-sizing: border-box; /* Fundamental para o campo não sair da tela */
+  }
+
   #subtitulo {
     font-size: 1.3rem;
     margin-top: 10px;
+    margin-bottom: 30px; /* Cria um espaço para as redes sociais respirarem */
   }
 
   /* AJUSTE DE TRANSIÇÃO ENTRE SEÇÕES */
@@ -460,19 +552,31 @@ footer {
     margin-top: 5vh;
   }
 
-  /* GRID PORTFÓLIO MOBILE */
-  .grid {
-    grid-template-columns: 1fr; /* Uma coluna só */
-    grid-auto-rows: auto;
-    margin-top: 5vh;
+  .painel-portfolio {
+    width: 100% !important; /* Garante que o container ocupe toda a largura */
+    padding: 0 !important; /* REMOVE os paddings laterais e verticais */
+    margin: 0 !important; /* REMOVE quaisquer margens */
+    margin-top: 5vh; /* Mantém o espaçamento com o Hero */
   }
 
-  .card {
-    height: 250px;
+  .painel {
+    padding: 0 !important; /* Remove paddings laterais dessa classe no mobile */
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Mantém uma coluna */
+    grid-auto-rows: auto;
+    width: 100%; /* Garante a largura total */
+    gap: 0px; /* Tira o espaço ENTRE os cards. (Opcional, mas fica lindo no edge-to-edge) */
   }
 
   .grid .card {
     grid-column: auto !important;
     grid-row: auto !important;
+    border-radius: 0; /* Opcional: Tira o arredondamento para encostar perfeito na borda */
+  }
+
+  .card {
+    height: 250px;
   }
 } /* <--- ESTA CHAVE FECHA O @MEDIA MOBILE E ESTAVA FALTANDO NO FIM! */
